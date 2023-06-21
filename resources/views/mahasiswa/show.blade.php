@@ -1,54 +1,50 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-white leading-tight">
+            {{ __('Mahasiswa Detail') }}
+        </h2>
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+                <a href="{{ route('mahasiswa.index') }}"
+                    class="inline-flex items-center px-4 py-2 mb-4 text-xs font-semibold tracking-widest text-black uppercase transition duration-150 ease-in-out bg-green-600 border border-transparent rounded-md hover:bg-green-500 active:bg-green-700 focus:outline-none focus:border-green-700 focus:shadow-outline-gray disabled:opacity-25">
+                    <- Go back
+                </a>
+                <table class="w-full table-fixed">
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">NIM</td>
+                            <td>{{ $mahasiswa->nim }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Nama</td>
+                            <td>{{ $mahasiswa->nama }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Umur</td>
+                            <td>{{ $mahasiswa->umur }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Alamat</td>
+                            <td>{{ $mahasiswa->alamat }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Kota</td>
+                            <td>{{ $mahasiswa->kota }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Kelas</td>
+                            <td>{{ $mahasiswa->kelas }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Jurusan</td>
+                            <td>{{ $mahasiswa->jurusan }}</td>
+                        </tr>
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Data Mahasiswa
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label class="form-label">NIM</label>
-                            <input type="text" class="form-control " name="nim" value="{{ $mahasiswa->nim }}" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Nama</label>
-                            <input type="text" class="form-control " name="nama" value="{{ $mahasiswa->nama }}" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Umur</label>
-                            <input type="text" class="form-control " name="umur" value="{{ $mahasiswa->umur }}" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Alamat</label>
-                            <input type="text" class="form-control " name="alamat" value="{{ $mahasiswa->alamat }}"
-                                readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Kota</label>
-                            <input type="text" class="form-control " name="kota" value="{{ $mahasiswa->kota }}"
-                                readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Kelas</label>
-                            <input type="text" class="form-control" name="kelas" value="{{ $mahasiswa->kelas }}"
-                                readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Jurusan</label>
-                            <input type="text" class="form-control" name="jurusan" value="{{ $mahasiswa->jurusan }}"
-                                readonly>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-grid gap-2">
-                                <a href="{{ route('mahasiswa.index') }}" class="btn btn-primary" type="submit">Kembali</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>

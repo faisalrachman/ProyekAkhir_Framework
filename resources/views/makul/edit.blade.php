@@ -1,53 +1,62 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Edit Makul</div>
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('makul.update', $makul->id) }}">
-                            @csrf
-                            @method('PUT')
-
-                            <div class="form-group">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama', $makul->nama) }}" required autofocus>
-                                @error('nama')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="sks">SKS</label>
-                                <input type="text" class="form-control @error('sks') is-invalid @enderror" id="sks" name="sks" value="{{ old('sks', $makul->sks) }}" required autofocus>
-                                @error('sks')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="semester">Semester</label>
-                                <input type="text" class="form-control @error('semester') is-invalid @enderror" id="semester" name="semester" value="{{ old('semester', $makul->semester) }}" required autofocus>
-                                @error('semester')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <!-- Form fields for other columns: nama, umur, alamat, kota, kelas, jurusan -->
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </form>
-                    </div>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-white leading-tight">
+            {{ __('Edit Mata Kuliah') }}
+        </h2>
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+                <a href="{{ route('makul.index') }}"
+                    class="inline-flex items-center px-4 py-2 mb-4 text-xs font-semibold tracking-widest text-black uppercase transition duration-150 ease-in-out bg-green-600 border border-transparent rounded-md hover:bg-green-500 active:bg-green-700 focus:outline-none focus:border-green-700 focus:shadow-outline-gray disabled:opacity-25">
+                    <- Go back
+                </a>
+                <form action="{{ route('makul.update', $makul->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                <div class="mb-4">
+                    <label for="textnama"
+                        class="block mb-2 text-sm font-bold text-gray-700">Nama</label>
+                    <input type="text"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="nama"
+                        value="{{ $makul->nama }}"
+                        placeholder="Enter Nama">
+                    @error('nama') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
                 </div>
+                <div class="mb-4">
+                    <label for="textsks"
+                        class="block mb-2 text-sm font-bold text-gray-700">SKS</label>
+                    <input type="text"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="sks"
+                        value="{{ $makul->sks }}"
+                        placeholder="Enter SKS">
+                    @error('sks') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
+                </div>
+                <div class="mb-4">
+                    <label for="textsemester"
+                        class="block mb-2 text-sm font-bold text-gray-700">Semester</label>
+                    <input type="text"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="semester"
+                        value="{{ $makul->semester }}"
+                        placeholder="Enter Semester">
+                    @error('semester') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
+                </div>
+
+                <div>
+                    <button type="submit"
+                    class="inline-flex items-center px-4 py-2 my-3 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25">
+                        Save
+                    </button>
+                </div>
+                </form>
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>
+
