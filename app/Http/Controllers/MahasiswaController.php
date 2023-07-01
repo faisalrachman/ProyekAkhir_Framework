@@ -71,9 +71,23 @@ class MahasiswaController extends Controller
             'kota' => 'required',
             'kelas' => 'required',
             'jurusan' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $mahasiswa->update($request->all());
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image ->move(public_path('images'), $imageName);
+
+        $mahasiswa->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+            'kota' => $request->kota,
+            'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
+            'image' => $imageName,
+        ]);
 
         return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa updated successfully.');
     }

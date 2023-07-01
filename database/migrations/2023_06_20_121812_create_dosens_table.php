@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('kota');
             $table->string('jurusan');
+            $table->string('image');
             $table->timestamps();
         });
     }

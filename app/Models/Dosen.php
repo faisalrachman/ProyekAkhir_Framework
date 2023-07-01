@@ -9,5 +9,5 @@ class Dosen extends Model
 {
     use HasFactory;
 
-    public $fillable = ['nip', 'nama', 'umur', 'alamat', 'kota', 'jurusan'];
+    public $fillable = ['nip', 'nama', 'umur', 'alamat', 'kota', 'jurusan', 'image'];
 }

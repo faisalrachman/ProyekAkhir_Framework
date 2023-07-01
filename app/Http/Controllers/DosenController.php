@@ -39,9 +39,22 @@ class DosenController extends Controller
             'alamat' => 'required',
             'kota' => 'required',
             'jurusan' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        Dosen::create($request->all());
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image ->move(public_path('images'), $imageName);
+
+        Dosen::create([
+            'nip' => $request->nip,
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+            'kota' => $request->kota,
+            'jurusan' => $request->jurusan,
+            'image' => $imageName,
+        ]);
 
         return redirect()->route('dosen.index')->with('success', 'Dosen created successfully.');
     }
@@ -77,9 +90,23 @@ class DosenController extends Controller
             'alamat' => 'required',
             'kota' => 'required',
             'jurusan' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $dosen->update($request->all());
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image ->move(public_path('images'), $imageName);
+
+        $dosen->update([
+            'nip' => $request->nip,
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+            'kota' => $request->kota,
+            'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
+            'image' => $imageName,
+        ]);
 
         return redirect()->route('dosen.index')->with('success', 'Dosen updated successfully.');
     }
