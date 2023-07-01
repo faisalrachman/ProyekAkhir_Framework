@@ -26,6 +26,9 @@
                             <th class="px-4 py-2 border">Nama</th>
                             <th class="px-4 py-2 border">SKS</th>
                             <th class="px-4 py-2 border">Semester</th>
+                            <th class="px-4 py-2 border">Hari</th>
+                            <th class="px-4 py-2 border">Ruang</th>
+                            <th class="px-4 py-2 border">Jam</th>
                             <th class="px-4 py-2 border">Action</th>
                         </tr>
                     </thead>
@@ -36,6 +39,9 @@
                                     <td class="px-4 py-2 border">{{ $row->nama }}</td>
                                     <td class="px-4 py-2 border">{{ $row->sks }}</td>
                                     <td class="px-4 py-2 border">{{ $row->semester }}</td>
+                                    <td class="px-4 py-2 border">{{ $row->hari }}</td>
+                                    <td class="px-4 py-2 border">{{ $row->ruang }}</td>
+                                    <td class="px-4 py-2 border">{{ $row->jam }}</td>
                                     <td class="px-4 py-2 border text-center">
                                         <form action="{{ route('makul.destroy', $row->id) }}" method="POST">
                                             <a href="{{ route('makul.show', $row->id) }}" class="inline-flex items-center px-4 py-2 mx-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25">

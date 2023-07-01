@@ -36,6 +36,10 @@ class MakulController extends Controller
             'nama' => 'required',
             'sks' => 'required',
             'semester' => 'required',
+            'ruang' => 'required',
+            'hari' => 'required',
+            'jam' => 'required',
+
         ]);
 
         Makul::create($request->all());
@@ -71,6 +75,10 @@ class MakulController extends Controller
             'nama' => 'required',
             'sks' => 'required',
             'semester' => 'required',
+            'ruang' => 'required',
+            'hari' => 'required',
+            'jam' => 'required',
+
         ]);
 
         $makul->update($request->all());

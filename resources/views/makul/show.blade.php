@@ -25,6 +25,18 @@
                             <td class="px-4 py-2 font-bold">Semester</td>
                             <td>{{ $makul->semester }}</td>
                         </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Hari</td>
+                            <td>{{ $makul->hari }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Ruang</td>
+                            <td>{{ $makul->ruang }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Jam</td>
+                            <td>{{ $makul->jam }}</td>
+                        </tr>
 
                     </tbody>
                 </table>

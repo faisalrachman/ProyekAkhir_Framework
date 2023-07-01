@@ -47,6 +47,38 @@
                     @error('semester') <span class="text-red-500">{{ $message }}
                     </span>@enderror
                 </div>
+                <div class="mb-4">
+                    <label for="texthari"
+                        class="block mb-2 text-sm font-bold text-gray-700">Hari</label>
+                    <input type="text"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="hari"
+                        value="{{ $makul->hari }}"
+                        placeholder="Enter Hari">
+                    @error('hari') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
+                </div><div class="mb-4">
+                    <label for="textruang"
+                        class="block mb-2 text-sm font-bold text-gray-700">Ruang</label>
+                    <input type="text"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="ruang"
+                        value="{{ $makul->ruang }}"
+                        placeholder="Enter Ruang">
+                    @error('ruang') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
+                </div><div class="mb-4">
+                    <label for="timejam"
+                        class="block mb-2 text-sm font-bold text-gray-700">Jam</label>
+                    <input type="time"
+                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                        name="jam"
+                        value="{{ $makul->jam }}"
+                        placeholder="Enter Jam">
+                    @error('jam') <span class="text-red-500">{{ $message }}
+                    </span>@enderror
+                </div>
+
 
                 <div>
                     <button type="submit"

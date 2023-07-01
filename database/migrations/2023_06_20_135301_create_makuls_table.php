@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('nama');
             $table->string('sks');
             $table->string('semester');
+            $table->string('ruang');
+            $table->string('hari');
+            $table->time('jam');
             $table->timestamps();
         });
     }

@@ -9,5 +9,5 @@ class Makul extends Model
 {
     use HasFactory;
 
-    public $fillable = ['nama', 'sks', 'semester'];
+    public $fillable = ['nama', 'sks', 'semester', 'ruang', 'hari', 'jam'];
 }
