@@ -38,5 +38,5 @@ Route::resource('dosen', DosenController::class)->middleware(['auth']);
 Route::resource('makul', MakulController::class)->middleware(['auth']);
 
 
-
-
+// Route::get('/image', [MahasiswaController::class,'index'])->name('mahasiswa.index');
+// Route::post('/image', [MahasiswaController::class,'store'])->name('mahasiswa.store');

@@ -41,6 +41,10 @@
                             <td class="px-4 py-2 font-bold">Jurusan</td>
                             <td>{{ $mahasiswa->jurusan }}</td>
                         </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-bold">Foto</td>
+                            <td><img src="/images/{{ $mahasiswa->image }}" alt="Image" width="70px" height="70px"></td>
+                        </tr>
 
                     </tbody>
                 </table>
